@@ -1,0 +1,51 @@
+<span *ngIf="!esDetalle()">
+  <span *ngIf="!esPrimeraCarga()">
+    <p>
+      Número de resultados: {{launches.length}}
+    </p>
+    <input value="Ordenar Menor" type="button" (click)="onClickOrdenarMenor(launches)">
+    <input value="Ordenar Mayor" type="button" (click)="onClickOrdenarMayor(launches)">
+
+    <ul>
+      <li *ngFor="let launch of launches">
+        <p>
+          <input value={{launch.name}} type="button" (click)="busquedaVuelo(launch)">
+        </p>
+      </li>
+    </ul>
+  </span>
+</span>
+
+<span *ngIf="!esDetalle()">
+  <span *ngIf="esPrimeraCarga()">
+    <p>
+      HOME
+    </p>
+    <p>
+      -------
+    </p>
+    <ul>
+      <li *ngFor="let launch of launches">
+        <p>
+          <input value={{launch.name}} type="button" (click)="busquedaVuelo(launch)">
+        </p>
+      </li>
+    </ul>
+  </span>
+</span>
+
+<span *ngIf="esDetalle()">
+  <span *ngIf="!esPrimeraCarga()">
+    <span *ngFor="let launch of launches">
+      <p>
+        {{launch.name}}
+      </p>
+      <p>
+        -------
+      </p>
+      <p *ngFor="let launch of launches">
+        <span>Id vuelo: {{launch.id}}  --  Nombre vuelo: {{launch.name}} -- Estado: {{launch.status}}</span>
+      </p>
+    </span>
+  </span>
+</span>

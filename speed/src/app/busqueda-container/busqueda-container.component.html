@@ -1,0 +1,14 @@
+<p>
+  <app-busqueda-agencias-presenter
+    (busquedaA)="onBusquedaAgencias($event)"
+    (busquedaM)="onBusquedaMisiones($event)"
+    (busquedaE)="onBusquedaEstados($event)"
+  ></app-busqueda-agencias-presenter>
+  <!--<input type="button" value ="Guardar" (click)="onSave()">-->
+  <app-resultado-busqueda-agencias-presenter
+    [launches] = "launches"
+    (busquedaV)="onBusquedaVuelo($event)"
+    (eventOrdenarMenor)="onClickOrdenarMenor($event)"
+    (eventOrdenarMayor)="onClickOrdenarMayor($event)"
+  ></app-resultado-busqueda-agencias-presenter>
+</p>
